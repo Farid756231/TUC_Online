@@ -1,0 +1,6 @@
+@tuc_backend_HostAddress = http://localhost:5268
+
+GET {{tuc_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
