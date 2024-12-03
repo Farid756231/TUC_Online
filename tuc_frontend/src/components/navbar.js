@@ -17,9 +17,9 @@ const Navbar = () => {
         {/* Textlänkar (mitten) */}
         <ul className="nav-links">
           <li><Link to="/kategorier" className="nav-text">Kategorier</Link></li>
-          <li><Link to="/checklist" className="nav-text">Tuc Sida</Link></li>
-          <li><Link to="/theory" className="nav-text">Om kurserna</Link></li>
-          <li><Link to="/prov" className="nav-text">Tuc alumni</Link></li>
+          <li><Link to="/tuc_sidan" className="nav-text">Tuc Sida</Link></li>
+          <li><Link to="/kurser" className="nav-text">Om kurserna</Link></li>
+          <li><Link to="/tuc_alumni" className="nav-text">Tuc alumni</Link></li>
         </ul>
 
         {/* Ikoner (höger) */}
