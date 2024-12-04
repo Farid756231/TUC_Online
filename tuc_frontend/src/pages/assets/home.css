@@ -8,7 +8,7 @@ body {
 }
 
 .picture-section {
-    background-image: url('C:\Users\kevin\OneDrive\Skrivbord\Test_Verif\tucShoppingOnline\TUC_Online\tuc_frontend\public\tucbildhome.jpeg');
+    background-image: url('C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_frontend\public\tucbildhome.jpeg');
     background-size: cover;
     background-position: center; color: rgb(255, 255, 255);
     padding: 1rem 0;
@@ -70,6 +70,10 @@ body {
     margin: 2rem auto;
     display: flex;
     justify-content: center;
+    top: 20%;
+    left: 30%;
+    position: absolute;
+
 }
 
 .search-bar input[type="text"] {

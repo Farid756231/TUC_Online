@@ -28,7 +28,9 @@ const Home = () => {
             <section className="picture-section">
                 <h1>Välkommen till TUC Swe Online Shop</h1>
                 <p>Ta nästa steg i din karriär med en utav våra kurser</p>
-                <div className="search-bar">
+                
+            </section>
+                <div className="search-bar" >
                     <input
                         type="text"
                         placeholder="Sök efter Kurs..."
@@ -36,8 +38,6 @@ const Home = () => {
                         onChange={handleSearch}
                     />
                 </div>
-            </section>
-
             <section className="featured-products">
                 <h2>Tillgängliga kurser</h2>
                 <div className="product-container">
