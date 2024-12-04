@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
-import './assets/home.css';
+import '../../src/assets/Stylesheet_css/home.css';
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');

@@ -8,8 +8,7 @@ body {
 }
 
 .picture-section {
-    background-image: url('C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_frontend\public\tucbildhome.jpeg');
-    background-size: cover;
+    background-image: url('C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_frontend\public\images\tucbildhome.jpeg'); background-size: cover;
     background-position: center; color: rgb(255, 255, 255);
     padding: 1rem 0;
     text-align: center;
