@@ -11,12 +11,12 @@ const Home = () => {
   };
 
   const products = [
-    { id: 1, name: 'Product 1', image: 'path/to/image1.jpg' },
-    { id: 2, name: 'Product 2', image: 'path/to/image2.jpg' },
-    { id: 3, name: 'Product 3', image: 'path/to/image3.jpg' },
-    { id: 4, name: 'Product 4', image: 'path/to/image4.jpg' },
-    { id: 5, name: 'Product 5', image: 'path/to/image5.jpg' },
-    { id: 6, name: 'Product 6', image: 'path/to/image6.jpg' },
+    { id: 1, name: 'programmering', image: '/images/Programmering.png' },
+    { id: 2, name: 'barnomsorg', image: '/images/Barnomsorg.jpg' },
+    { id: 3, name: 'elkonstruktör', image: '/images/Elkonstruktör.jpg' },
+    { id: 4, name: 'pedagogik', image: '/images/Pedagogik.jpg' },
+    { id: 5, name: 'cad-Konstruktion', image: '/images/CAD-konstruktion.jpg' },
+    { id: 6, name: 'sjukvård', image: '/images/sjukvård.png' },
   ];
 
   // filtrering baserat på sökord
@@ -67,6 +67,8 @@ const Home = () => {
         </section>
         <p>&copy; 2024 TUC Online Shopping. All rights reserved.</p>
       </div>
+
+
     </div>
 
   );
