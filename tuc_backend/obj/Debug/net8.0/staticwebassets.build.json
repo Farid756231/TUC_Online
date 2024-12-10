@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "+j+Fyv7N2xfwYgUDFAQNQpeF92k45241rnOD4xtbGIg=",
+  "Hash": "WUirP30yrUEZZgVpPPV74mrGojx/IKQKDD2n9AAL7i4=",
   "Source": "tuc_backend",
   "BasePath": "_content/tuc_backend",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

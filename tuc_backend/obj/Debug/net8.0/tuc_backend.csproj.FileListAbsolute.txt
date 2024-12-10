@@ -396,3 +396,12 @@ C:\Users\kosra\OneDrive\Skrivbord\TUC_Online\tuc_backend\bin\Debug\net8.0\System
 C:\Users\kosra\OneDrive\Skrivbord\TUC_Online\tuc_backend\bin\Debug\net8.0\dotenv.net.dll
 C:\Users\kosra\OneDrive\Skrivbord\TUC_Online\tuc_backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\kosra\OneDrive\Skrivbord\TUC_Online\tuc_backend\bin\Debug\net8.0\.env
+C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_backend\bin\Debug\net8.0\dotenv.net.dll
+C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_backend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_backend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_backend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Firas Abbas\Desktop\prog\TucShopping\TUC_Online\tuc_backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
