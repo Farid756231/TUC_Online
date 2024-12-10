@@ -93,7 +93,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: rgb(251, 247, 247);
+}
+
+.product-item a {
+    text-decoration: none;  
+    color: inherit;  
+}
+
+.product-item a:hover {
+    text-decoration: none; 
 }
 
 .product-item img {

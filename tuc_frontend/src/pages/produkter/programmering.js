@@ -49,13 +49,12 @@ const Programmering = () => {
 
 
             <h2>Rekomenderade Kurser</h2>
+            
             <div className='course-conatiner'>
-
-
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="elkonstruktör">
+                        <Link to="/elkonstruktör">
                             <img src="/images/Elkonstruktör.jpg" alt="Elkonstruktör" />
                         </Link>
                         <h3>Elkonstruktör</h3>
@@ -72,7 +71,7 @@ const Programmering = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="barnomsorg">
+                        <Link to="/barnomsorg">
                             <img src="/images/Barnomsorg.jpg" alt="Barnomsorg" />
                         </Link>
                         <h3>Barnomsorg</h3>
@@ -90,7 +89,7 @@ const Programmering = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="pedagogik">
+                        <Link to="/pedagogik">
                             <img src="/images/Pedagogik.jpg" alt="Barnomsorg" />
                         </Link>
                         <h3>Pedagogik</h3>

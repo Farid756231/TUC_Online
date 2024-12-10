@@ -6,7 +6,7 @@ import '../../assets/Stylesheet_css/barnomsorg.css';
 const Barnomsorg = () => {
     return (
         <div>
-
+            <Navbar />
             <div className='barnomsorg-container'>
                 <img src='/images/Barnomsorg.jpg' alt='Barnomsorg' className='barnomsorg-bild'></img>
             </div>
@@ -53,7 +53,7 @@ const Barnomsorg = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="elkonstruktör">
+                        <Link to="/elkonstruktör">
                             <img src="/images/Elkonstruktör.jpg" alt="Elkonstruktör" />
                         </Link>
                         <h3>Elkonstruktör</h3>
@@ -70,7 +70,7 @@ const Barnomsorg = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="programmering">
+                        <Link to="/programmering">
                             <img src="/images/Programmering.png" alt="programering" />
                         </Link>
                         <h3>Programmering</h3>
@@ -88,7 +88,7 @@ const Barnomsorg = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="pedagogik">
+                        <Link to="/pedagogik">
                             <img src="/images/Pedagogik.jpg" alt="Barnomsorg" />
                         </Link>
                         <h3>Pedagogik</h3>

@@ -94,6 +94,7 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 300px;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -110,32 +111,44 @@ h3 {
 
 .course-card h3 {
   font-size: 18px;
-  margin: 15px;
+  margin: 15px 0;
+  color: #2c3e50;
 }
 
 .course-card p {
-  margin: 0 15px 10px;
+  margin: 15px 10px;
   color: #111010;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .course-card .details {
-  padding: 15px;
   display: flex;
+  flex-direction: row;
   gap: 10px;
   justify-content: center;
-  align-items: center;
-  font-size: 14px;
+  padding: 15px;
+
 
 }
 
 .course-card .details p {
+  white-space: nowrap; 
   background-color: #3f4461;
-  padding: 8px;
+  padding: 10px 20px;
   border-radius: 15px;
   margin: 0;
   text-align: center;
   font-size: 14px;
   color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex: 1;
+  max-width: 100px; 
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 
 }

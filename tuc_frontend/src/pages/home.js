@@ -50,7 +50,7 @@ const Home = () => {
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <div key={product.id} className="product-item">
-                  <Link to={`/product/${product.id}`}>
+                  <Link to={`/${product.name}`}>
                     <img src={product.image} alt={product.name} />
                     <p>{product.name}</p>
                   </Link>
