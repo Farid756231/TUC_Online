@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using tuc_backend.Models;
 using IdentityUser = Microsoft.AspNetCore.Identity.IdentityUser;
 
@@ -24,7 +25,10 @@ public class DataContext : DbContext
             new IdentityRole { RoleId = "Admin", Name = "Administrator" },
             new IdentityRole { RoleId = "User", Name = "Regular User" }
         );
+
+     
     }
     public DbSet<IdentityUsers> Users { get; set; }
     public DbSet<IdentityRole> Roles { get; set; }
+   
 }

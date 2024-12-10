@@ -1,31 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../src/assets/Stylesheet_css/home.css';
 import Navbar from '../components/navbar';
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const token = localStorage.getItem('authToken'); 
+        const response = await fetch('http://localhost:5268/api/Products', {
+          headers: {
+            'Authorization': `Bearer ${token}`, 
+          },
+        });
 
-  const products = [
-    { id: 1, name: 'programmering', image: '/images/Programmering.png' },
-    { id: 2, name: 'barnomsorg', image: '/images/Barnomsorg.jpg' },
-    { id: 3, name: 'elkonstruktör', image: '/images/Elkonstruktör.jpg' },
-    { id: 4, name: 'pedagogik', image: '/images/Pedagogik.jpg' },
-    { id: 5, name: 'cad-Konstruktion', image: '/images/CAD-konstruktion.jpg' },
-    { id: 6, name: 'sjukvård', image: '/images/sjukvård.png' },
-  ];
+        if (!response.ok) {
+          throw new Error('Något gick fel med att hämta produkterna');
+        }
 
-  // filtrering baserat på sökord
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-
     <div>
       <Navbar />
       <div>
@@ -39,7 +53,7 @@ const Home = () => {
                 type="text"
                 placeholder="Sök efter Kurs..."
                 value={searchTerm}
-                onChange={handleSearch}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
           </div>
@@ -47,17 +61,21 @@ const Home = () => {
         <section className="featured-products">
           <h2>Tillgängliga kurser</h2>
           <div className="product-container">
-            {filteredProducts.length > 0 ? (
+            {loading ? (
+              <p>Laddar produkter...</p>
+            ) : error ? (
+              <p>{error}</p>
+            ) : filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <div key={product.id} className="product-item">
-                  <Link to={`/product/${product.id}`}>
+                  <Link to={`/${product.name}`}>
                     <img src={product.image} alt={product.name} />
                     <p>{product.name}</p>
                   </Link>
                 </div>
               ))
             ) : (
-              <p>No products found</p>
+              <p>Inga produkter hittades</p>
             )}
           </div>
         </section>
@@ -67,11 +85,9 @@ const Home = () => {
         </section>
         <p>&copy; 2024 TUC Online Shopping. All rights reserved.</p>
       </div>
-
-
     </div>
-
   );
 };
 
 export default Home;
+

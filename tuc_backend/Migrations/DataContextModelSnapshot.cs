@@ -28,7 +28,7 @@ namespace tuc_backend.Migrations
 
                     b.HasKey("RoleId");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
 
                     b.HasData(
                         new
@@ -82,7 +82,7 @@ namespace tuc_backend.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("tuc_backend.Models.IdentityUsers", b =>

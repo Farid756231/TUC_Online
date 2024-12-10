@@ -33,15 +33,10 @@ const Programmering = () => {
 
 
                 <div className='icon-style'>
-                    <Link to="/kundvagn">
-                        <img src="/images/Kundvagn_icon.jpg" alt="Cart" className="nav-icon" />
-                    </Link>
                     <Link to="/Köp">
                         <button className="Köp-icon" >Köp</button>
                     </Link>
-                    <Link to="/like">
-                        <img src="/images/Like-icon.jpg" alt="Like" className="nav-icon" />
-                    </Link>
+               
                 </div>
 
 
@@ -55,7 +50,7 @@ const Programmering = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="elkonstruktör">
+                        <Link to="/elkonstruktör">
                             <img src="/images/Elkonstruktör.jpg" alt="Elkonstruktör" />
                         </Link>
                         <h3>Elkonstruktör</h3>
@@ -72,7 +67,7 @@ const Programmering = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="barnomsorg">
+                        <Link to="/barnomsorg">
                             <img src="/images/Barnomsorg.jpg" alt="Barnomsorg" />
                         </Link>
                         <h3>Barnomsorg</h3>
@@ -90,7 +85,7 @@ const Programmering = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="pedagogik">
+                        <Link to="/pedagogik">
                             <img src="/images/Pedagogik.jpg" alt="Barnomsorg" />
                         </Link>
                         <h3>Pedagogik</h3>

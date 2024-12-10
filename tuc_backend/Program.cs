@@ -29,7 +29,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
-        builder.WithOrigins("http://localhost:3002")
+        builder.WithOrigins("http://localhost:3000")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials());
@@ -90,9 +90,6 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("UserPolicy", policy => { policy.RequireRole("User"); });
     options.AddPolicy("AdminPolicy", policy => { policy.RequireRole("Admin"); });
 });
-
-string connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
-builder.Services.AddDbContext<DataContext>(options => { options.UseSqlite(connectionString); });
 
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IJWTServices, JwtServices>();
