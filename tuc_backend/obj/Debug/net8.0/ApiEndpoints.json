@@ -88,6 +88,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CheckoutAPI.Controllers.CheckoutController",
+    "Method": "PostCheckout",
+    "RelativePath": "api/Checkout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "checkout",
+        "Type": "tuc_backend.Models.Checkout",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "tuc_backend.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

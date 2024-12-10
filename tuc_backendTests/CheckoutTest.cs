@@ -1,6 +1,6 @@
 ﻿using Xunit;
 using tuc_backend.Models;
-using tuc_backend.Models.tuc_backend.Models;
+using tuc_backend.Models;
 
 namespace CheckoutAPITests
 {

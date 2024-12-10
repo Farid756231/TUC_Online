@@ -4,9 +4,7 @@ namespace tuc_backend.Models
 {
     public class Checkout
     {
-        
         public int Id { get; set; }
-
 
         [Required]
         [StringLength(100, ErrorMessage = "Name must be less than 100 characters.")]
@@ -26,10 +24,5 @@ namespace tuc_backend.Models
 
         [Required]
         public DateTime Date { get; set; } = DateTime.Now;
-
-        public string SessionId { get; set; }
-        public string IpAddress { get; set; }
-
-        public bool PaymentStatus { get; set; } = false;
     }
 }
