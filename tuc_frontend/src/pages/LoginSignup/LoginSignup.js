@@ -43,7 +43,7 @@ function LoginSignup() {
         const decodedToken = decodeToken(data.jwtToken);
         const userRole = decodedToken?.role;
 
-        window.location.href = userRole === "Admin" ? "/admin-dashboard" : "/";
+        window.location.href = userRole === "Admin" ? "/admin" : "/";
       } catch (err) {
         console.error(err);
         setError(err.message);
