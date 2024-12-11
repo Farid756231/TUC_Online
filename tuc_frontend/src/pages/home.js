@@ -1,43 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
+import React, { useState } from 'react';
 import '../../src/assets/Stylesheet_css/home.css';
 import Navbar from '../components/navbar';
+import ConfirmModal from '../components/Product/confirmModal';
 
-const Home = () => {
+const Home = ({ addToCart }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const token = localStorage.getItem('authToken'); 
-        const response = await fetch('http://localhost:5268/api/Products', {
-          headers: {
-            'Authorization': `Bearer ${token}`, 
-          },
-        });
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-        if (!response.ok) {
-          throw new Error('Något gick fel med att hämta produkterna');
-        }
 
-        const data = await response.json();
-        setProducts(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
+  const products = [
+    { id: 1, name: 'programmering', image: '/images/Programmering.png', price: 500 },
+    { id: 2, name: 'barnomsorg', image: '/images/Barnomsorg.jpg', price: 400 },
+    { id: 3, name: 'elkonstruktör', image: '/images/Elkonstruktör.jpg', price: 600 },
+    { id: 4, name: 'pedagogik', image: '/images/Pedagogik.jpg', price: 350 },
+    { id: 5, name: 'cad-Konstruktion', image: '/images/CAD-konstruktion.jpg', price: 450 },
+    { id: 6, name: 'sjukvård', image: '/images/sjukvård.png', price: 550 },
+  ];
 
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleAddToCartClick = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleConfirmPurchase = (product) => {
+    addToCart(product);
+    setSelectedProduct(null); 
+  };
+
+  const handleCancel = () => {
+    setSelectedProduct(null); 
+  };
 
   return (
     <div>
@@ -53,41 +53,48 @@ const Home = () => {
                 type="text"
                 placeholder="Sök efter Kurs..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={handleSearch}
               />
             </div>
           </div>
         </section>
+
         <section className="featured-products">
           <h2>Tillgängliga kurser</h2>
           <div className="product-container">
-            {loading ? (
-              <p>Laddar produkter...</p>
-            ) : error ? (
-              <p>{error}</p>
-            ) : filteredProducts.length > 0 ? (
+            {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <div key={product.id} className="product-item">
-                  <Link to={`/${product.name}`}>
-                    <img src={product.image} alt={product.name} />
-                    <p>{product.name}</p>
-                  </Link>
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    onClick={() => handleAddToCartClick(product)}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <p>{product.name}</p>
+                  <p>{product.price} SEK</p>
                 </div>
               ))
             ) : (
-              <p>Inga produkter hittades</p>
+              <p>No products found</p>
             )}
           </div>
         </section>
+
         <section className="about-us">
           <h2>About Us</h2>
           <p>Learn more about our mission and values</p>
         </section>
+
         <p>&copy; 2024 TUC Online Shopping. All rights reserved.</p>
       </div>
+      <ConfirmModal
+        product={selectedProduct}
+        onConfirm={handleConfirmPurchase}
+        onCancel={handleCancel}
+      />
     </div>
   );
 };
 
 export default Home;
-
