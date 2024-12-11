@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./LoginSignup.css";
 import { jwtDecode } from "jwt-decode";
-import userIcon from "../../assets/user1.png";
 import email_icon from "../../assets/email1.png";
 import password_icon from "../../assets/padlock1.png";
 
@@ -9,21 +8,8 @@ function LoginSignup() {
   const [action, setAction] = useState("Logga in");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [usernameError, setUsernameError] = useState("");
-
-  function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-
-  function validatePassword(password) {
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-    return passwordRegex.test(password);
-  }
 
   function decodeToken(token) {
     try {
@@ -37,102 +23,60 @@ function LoginSignup() {
     }
   }
 
-  const handleLogin = async () => {
-    if (!validateEmail(email)) {
-      setEmailError("Ogiltig e-postadress");
-      return;
-    }
-    setEmailError("");
+  const handleAction = async () => {
+    if (action === "Logga in") {
+      try {
+        const response = await fetch("http://localhost:5268/api/Auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+          credentials: 'include',
+        });
 
-    if (!validatePassword(password)) {
-      setPasswordError(
-        "Lösenordet måste vara minst 8 tecken långt och innehålla stora bokstäver, små bokstäver, siffror och specialtecken."
-      );
-      return;
-    }
-    setPasswordError("");
+        if (!response.ok) {
+          throw new Error("Login failed");
+        }
 
-    try {
-      const response = await fetch("http://localhost:5268/api/Auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+        const data = await response.json();
+        localStorage.setItem("authToken", data.jwtToken);
 
-      if (!response.ok) {
-        throw new Error("Login failed");
+        const decodedToken = decodeToken(data.jwtToken);
+        const userRole = decodedToken?.role;
+
+        window.location.href = userRole === "Admin" ? "/admin-dashboard" : "/";
+      } catch (err) {
+        console.error(err);
+        setError(err.message);
       }
-
-      const data = await response.json();
-      localStorage.setItem("authToken", data.jwtToken);
-
-      const decodedToken = decodeToken(data.jwtToken);
-      const userRole = decodedToken?.role;
-
-      if (userRole === "Admin") {
-        window.location.href = "/admin-dashboard";
-      } else if (userRole === "User") {
-        window.location.href = "/";
-      } else {
-        setError("Unauthorized role");
+    } else if (action === "Skapa konto") {
+      if (password !== confirmPassword) {
+        setError("Lösenorden matchar inte");
+        return;
       }
-    } catch (err) {
-      console.error(err);
-      setError(err.message);
-    }
-  };
+      setError("");
 
-  const handleSignup = async () => {
-    if (!validateEmail(email)) {
-      setEmailError("Ogiltig e-postadress");
-      return;
-    }
-    setEmailError("");
+      try {
+        const response = await fetch("http://localhost:5268/api/Auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password, confirmPassword }),
+        });
 
-    if (!validatePassword(password)) {
-      setPasswordError(
-        "Lösenordet måste vara minst 8 tecken långt och innehålla stora bokstäver, små bokstäver, siffror och specialtecken."
-      );
-      return;
-    }
-    setPasswordError("");
+        if (!response.ok) {
+          throw new Error("Signup failed");
+        }
 
-    if (username.trim() === "") {
-      setUsernameError("Användarnamn krävs");
-      return;
-    }
-    setUsernameError("");
+        const data = await response.json();
+        localStorage.setItem("authToken", data.jwtToken);
 
-    try {
-      const response = await fetch("http://localhost:5268/api/Auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, email, password }),
-      });
+        const decodedToken = decodeToken(data.jwtToken);
+        const userRole = decodedToken?.role;
 
-      if (!response.ok) {
-        throw new Error("Signup failed");
+        window.location.href = userRole === "Admin" ? "/admin-dashboard" : "/";
+      } catch (err) {
+        console.error("Signup Error:", err);
+        setError(err.message);
       }
-
-      const data = await response.json();
-      localStorage.setItem("authToken", data.token);
-
-      const userRole = decodeToken(data.token)?.role;
-
-      if (userRole === "Admin") {
-        window.location.href = "/admin-dashboard";
-      } else if (userRole === "User") {
-        window.location.href = "/user-dashboard";
-      } else {
-        setError("Unauthorized role");
-      }
-    } catch (err) {
-      console.error(err);
-      setError(err.message);
     }
   };
 
@@ -144,73 +88,48 @@ function LoginSignup() {
           <div className="underline"></div>
         </h1>
         <div className="inputs">
-          {action === "Logga in" ? (
-            <div></div>
-          ) : (
-            <div className="input">
-              <img src={userIcon} alt="" />
-              <input
-                type="text"
-                placeholder="Namn"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              {usernameError && <div className="error-message">{usernameError}</div>}
-            </div>
-          )}
           <div className="input">
-            <img src={email_icon} alt="" />
+            <img src={email_icon} alt="Email icon" />
             <input
               type="email"
               placeholder="E-post"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            {emailError && <div className="error-message">{emailError}</div>}
           </div>
           <div className="input">
-            <img src={password_icon} alt="" />
+            <img src={password_icon} alt="Password icon" />
             <input
               type="password"
               placeholder="Lösenord"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {passwordError && <div className="error-message">{passwordError}</div>}
           </div>
+          {action === "Skapa konto" && (
+            <div className="input">
+              <img src={password_icon} alt="Confirm Password icon" />
+              <input
+                type="password"
+                placeholder="Bekräfta lösenord"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </div>
+          )}
         </div>
         <div className="forgot-password">
           Glömt lösenord? <span>Klicka här</span>
         </div>
         {error && <div className="error-message">{error}</div>}
         <div className="submit-container">
-          <div
-            className={action === "Logga in" ? "submit gray" : "submit"}
-            onClick={() => setAction("Logga in")}
-            role="button"
-            aria-label="Logga in"
-          >
-            Logga in
+          <div className="submit" onClick={() => setAction(action === "Logga in" ? "Skapa konto" : "Logga in")}>
+            {action === "Logga in" ? "Skapa konto" : "Logga in"}
           </div>
-          <div
-            className={action === "Skapa konto" ? "submit gray" : "submit"}
-            onClick={() => setAction("Skapa konto")}
-            role="button"
-            aria-label="Skapa konto"
-          >
-            Skapa konto
+          <div className="submit" onClick={handleAction}>
+            {action}
           </div>
         </div>
-        {action === "Logga in" && (
-          <div className="submit" onClick={handleLogin} role="button">
-            Logga in
-          </div>
-        )}
-        {action === "Skapa konto" && (
-          <div className="submit" onClick={handleSignup} role="button">
-            Skapa konto
-          </div>
-        )}
       </div>
     </div>
   );
