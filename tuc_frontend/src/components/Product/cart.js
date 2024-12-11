@@ -10,7 +10,7 @@ const Cart = ({ cartItems }) => {
     <div>
       <Navbar />
       <div className="cart-container">
-        <h2>Your Cart</h2>
+        <h2>Din varukorg</h2>
         {cartItems.length > 0 ? (
           <ul className="cart-items">
             {cartItems.map((item, index) => (
@@ -25,15 +25,15 @@ const Cart = ({ cartItems }) => {
             ))}
           </ul>
         ) : (
-          <p>Your cart is empty.</p>
+          <p>Din varukorg är tom</p>
         )}
         
-    
         <div className="total-price">
-          <h3>Total: {totalPrice} SEK</h3>
+          <h3>Pris: {totalPrice} SEK</h3>
         </div>
 
-        <Link to="/" className="back-home-button">Back to Home</Link>
+        <Link to="/" className="back-home-button">Hem</Link>
+        <Link to="/checkout" className="back-home-button">kassa</Link>
       </div>
     </div>
   );
