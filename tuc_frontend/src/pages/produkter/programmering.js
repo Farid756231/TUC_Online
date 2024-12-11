@@ -33,7 +33,7 @@ const Programmering = () => {
 
 
                 <div className='icon-style'>
-                    <Link to="/Köp">
+                    <Link to="/cart">
                         <button className="Köp-icon" >Köp</button>
                     </Link>
                

@@ -31,7 +31,7 @@ const Barnomsorg = () => {
                     Klicka på "Köp" och ta det första steget mot en givande framtid inom barnomsorg!</pre>
 
                 <div className='icon-style'>
-                    <Link to="/Köp">
+                    <Link to="/cart">
                         <button className="Köp-icon" >Köp</button>
                     </Link>
             
