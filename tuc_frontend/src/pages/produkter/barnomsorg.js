@@ -6,7 +6,7 @@ import '../../assets/Stylesheet_css/barnomsorg.css';
 const Barnomsorg = () => {
     return (
         <div>
-
+               <Navbar />
             <div className='barnomsorg-container'>
                 <img src='/images/Barnomsorg.jpg' alt='Barnomsorg' className='barnomsorg-bild'></img>
             </div>
@@ -31,15 +31,10 @@ const Barnomsorg = () => {
                     Klicka på "Köp" och ta det första steget mot en givande framtid inom barnomsorg!</pre>
 
                 <div className='icon-style'>
-                    <Link to="/kundvagn">
-                        <img src="/images/Kundvagn_icon.jpg" alt="Cart" className="nav-icon" />
-                    </Link>
                     <Link to="/Köp">
                         <button className="Köp-icon" >Köp</button>
                     </Link>
-                    <Link to="/like">
-                        <img src="/images/Like-icon.jpg" alt="Like" className="nav-icon" />
-                    </Link>
+            
                 </div>
 
 
@@ -53,7 +48,7 @@ const Barnomsorg = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="elkonstruktör">
+                    <Link to="/elkonstruktör">
                             <img src="/images/Elkonstruktör.jpg" alt="Elkonstruktör" />
                         </Link>
                         <h3>Elkonstruktör</h3>
@@ -70,7 +65,7 @@ const Barnomsorg = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="programmering">
+                    <Link to="/programmering">
                             <img src="/images/Programmering.png" alt="programering" />
                         </Link>
                         <h3>Programmering</h3>
@@ -88,7 +83,7 @@ const Barnomsorg = () => {
                 <div className="recommended-course">
 
                     <div className="course-card">
-                        <Link to="pedagogik">
+                    <Link to="/pedagogik">
                             <img src="/images/Pedagogik.jpg" alt="Barnomsorg" />
                         </Link>
                         <h3>Pedagogik</h3>
