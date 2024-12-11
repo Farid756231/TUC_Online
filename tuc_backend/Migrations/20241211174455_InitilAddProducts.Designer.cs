@@ -11,8 +11,8 @@ using tuc_backend.Data;
 namespace tuc_backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20241211000520_InitialAddProdukters")]
-    partial class InitialAddProdukters
+    [Migration("20241211174455_InitilAddProducts")]
+    partial class InitilAddProducts
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
