@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qypm5QrnvaE=",
+  "dgSpecHash": "o4CBLKlqqMM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kosra\\OneDrive\\Skrivbord\\TUC_Online\\tuc_backend\\tuc_backend.csproj",
+  "projectFilePath": "C:\\Users\\kosra\\OneDrive\\Skrivbord\\TUC_Online2\\tuc_backend\\tuc_backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kosra\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\kosra\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
