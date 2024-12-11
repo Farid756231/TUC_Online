@@ -91,9 +91,6 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("AdminPolicy", policy => { policy.RequireRole("Admin"); });
 });
 
-string connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
-builder.Services.AddDbContext<DataContext>(options => { options.UseSqlite(connectionString); });
-
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IJWTServices, JwtServices>();
 builder.Services.AddScoped<PasswordManager>();

@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tuc_backendTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce188933865731390d0292f14895bfe269fefe45")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a2eb21e4862bcd74f177841f000d1623e3449fb")]
+>>>>>>> 99586b6feaa474065ae17118293af56a3f38d536
 [assembly: System.Reflection.AssemblyProductAttribute("tuc_backendTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tuc_backendTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

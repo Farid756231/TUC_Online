@@ -65,10 +65,11 @@
     color: #2c3e50;
     margin: 20px 0 10px;
   }
-  
   .course-conatiner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height: 600px;
+    align-content: center;
+    grid-template-columns: auto auto auto;
     gap: 10px;
     background-color: #f9f9f9;
     padding: 10px;
@@ -92,7 +93,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 300px;
-    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
@@ -109,45 +109,33 @@
   
   .course-card h3 {
     font-size: 18px;
-    margin: 15px 0;
-    color: #2c3e50;
+    margin: 15px;
   }
   
   .course-card p {
-    margin: 15px 10px;
+    margin: 0 15px 10px;
     color: #111010;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 14px;
   }
   
   .course-card .details {
+    padding: 15px;
     display: flex;
-    flex-direction: row;
     gap: 10px;
     justify-content: center;
-    padding: 15px;
-  
+    align-items: center;
+    font-size: 14px;
   
   }
   
   .course-card .details p {
-    white-space: nowrap; 
     background-color: #3f4461;
-    padding: 10px 20px;
+    padding: 8px;
     border-radius: 15px;
     margin: 0;
     text-align: center;
     font-size: 14px;
     color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    flex: 1;
-    max-width: 100px; 
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
+    cursor: default;
   
   }
-

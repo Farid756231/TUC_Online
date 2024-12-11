@@ -85,6 +85,63 @@ namespace tuc_backend.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("tuc_backend.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Image = "/images/Programmering.png",
+                            Name = "programmering"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Image = "/images/Barnomsorg.jpg",
+                            Name = "barnomsorg"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Image = "/images/Elkonstruktör.jpg",
+                            Name = "elkonstruktör"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Image = "/images/Pedagogik.jpg",
+                            Name = "pedagogik"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Image = "/images/CAD-konstruktion.jpg",
+                            Name = "cad-Konstruktion"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Image = "/images/sjukvård.png",
+                            Name = "sjukvård"
+                        });
+                });
+
             modelBuilder.Entity("tuc_backend.Models.IdentityUsers", b =>
                 {
                     b.HasOne("tuc_backend.Models.IdentityRole", "Role")
