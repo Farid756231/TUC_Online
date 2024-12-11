@@ -54,7 +54,6 @@ const Navbar = () => {
           <Link to="/kundvagn">
             <img src="/images/Kundvagn_icon.jpg" alt="Cart" className="nav-icon" />
           </Link>
-<<<<<<< HEAD
           {isLoggedIn ? (
 
             <img src="/images/Logout.png" alt="Logout" className="nav-icon" onClick={handleLogout} />
@@ -64,11 +63,6 @@ const Navbar = () => {
               <img src="/images/User_icon.png" alt="Login" className="nav-icon" />
             </Link>
           )}
-=======
-          <Link to="/login">
-            <img src="/images/Login.jpg" alt="Login" className="nav-icon" />
-          </Link>
->>>>>>> 99586b6feaa474065ae17118293af56a3f38d536
         </div>
       </nav>
     </header>
