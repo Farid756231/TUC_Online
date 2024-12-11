@@ -148,6 +148,20 @@ public class AuthController : ControllerBase
         return Ok(new { jwtToken = newJwtToken, refreshToken = newRefreshToken });
     }
 
+    [HttpPost("Logout")]
+    public IActionResult Logout()
+    {
+        Response.Cookies.Delete("token");
+        Response.Cookies.Delete("refreshToken");
+
+        var response = new LogoutResponse
+        {
+            Message = "Successfully logged out."
+        };
+
+        return Ok(response);
+    }
+
     [HttpPost("reset-password")]
     public IActionResult ResetPassword()
     {
