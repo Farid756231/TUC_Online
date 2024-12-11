@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tuc_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dcfef9cc37ba5eb2dcef1e49a101b165c57cc744")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a2eb21e4862bcd74f177841f000d1623e3449fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("tuc_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tuc_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
