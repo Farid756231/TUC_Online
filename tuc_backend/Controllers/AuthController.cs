@@ -188,5 +188,4 @@ public class AuthController : ControllerBase
     {
         return Ok("Welcome Admin!");
     }
-
 }

@@ -38,4 +38,5 @@ public class DataContext : DbContext
     public DbSet<IdentityUsers> Users { get; set; }
     public DbSet<IdentityRole> Roles { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<Checkout> Checkouts { get; set; }
 }

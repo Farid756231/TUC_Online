@@ -39,7 +39,7 @@ const Navbar = () => {
       <nav className="navbar-container">
         <div className="nav-logo">
           <Link to="/">
-            <img src="/images/TUC-icon.jpg" alt="TUC Home" />
+            <img src="/images/BagShop.png" alt="TUC Home" />
           </Link>
         </div>
 

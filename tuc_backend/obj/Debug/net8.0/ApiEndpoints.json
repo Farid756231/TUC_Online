@@ -98,6 +98,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CheckoutAPI.Controllers.CheckoutController",
+    "Method": "PostCheckout",
+    "RelativePath": "api/Checkout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "checkout",
+        "Type": "Checkout",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "tuc_backend.Controllers.ProductsController",
     "Method": "GetProducts",
     "RelativePath": "api/Products",
