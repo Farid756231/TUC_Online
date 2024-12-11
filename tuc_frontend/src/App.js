@@ -6,7 +6,7 @@ import Home from './pages/home';
 import Programmering from './pages/produkter/programmering'
 import LoginSignup from './pages/LoginSignup/LoginSignup';
 import Barnomsorg from './pages/produkter/barnomsorg';
-import Cart from './pages/produkter/kundvagn';
+import Cart from './pages/produkter/Cart';
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
          <Route path="/programmering" element={<Programmering />} />
          <Route path="/barnomsorg" element={<Barnomsorg />} />
          <Route path='/login' element={<LoginSignup />} />
-         <Route path='/cart' element={<Cart />} />
+         <Route path="/cart" element={<Cart />} />
+         
         
       </Routes>
   </Router> 

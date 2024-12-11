@@ -840,3 +840,4 @@ C:\Users\Elgiganten\OneDrive\Skrivbord\TUC_KURSER\Testning_Kurs\TUC_Onlinenew\tu
 C:\Users\Elgiganten\OneDrive\Skrivbord\TUC_KURSER\Testning_Kurs\TUC_Onlinenew\tuc_backend\bin\Debug\net8.0\Microsoft.AspNetCore.TestHost.dll
 C:\Users\Elgiganten\OneDrive\Skrivbord\TUC_KURSER\Testning_Kurs\TUC_Onlinenew\tuc_backend\obj\Debug\net8.0\MvcTestingAppManifest.json
 C:\Users\Elgiganten\OneDrive\Skrivbord\TUC_KURSER\Testning_Kurs\TUC_Onlinenew\tuc_backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Elgiganten\OneDrive\Skrivbord\TUC_KURSER\Testning_Kurs\TUC_Onlinenew\tuc_backend\bin\Debug\net8.0\Newtonsoft.Json.dll

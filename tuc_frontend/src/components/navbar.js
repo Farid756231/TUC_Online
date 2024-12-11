@@ -23,7 +23,7 @@ const Navbar = () => {
         </ul>
 
         <div className="nav-icons">
-          <Link to="/kundvagn">
+          <Link to="/cart">
             <img src="/images/Kundvagn_icon.jpg" alt="Cart" className="nav-icon" />
           </Link>
           <Link to="/login">

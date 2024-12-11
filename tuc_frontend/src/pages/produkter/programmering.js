@@ -4,6 +4,7 @@ import Navbar from '../../components/navbar'
 import '../../assets/Stylesheet_css/programmering.css';
 
 const Programmering = () => {
+  
     return (
         <div>
             <Navbar />
@@ -107,6 +108,4 @@ const Programmering = () => {
 }
 
 export default Programmering
-
-
 

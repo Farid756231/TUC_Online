@@ -17,6 +17,92 @@ namespace tuc_backend.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
 
+            modelBuilder.Entity("tuc_backend.Models.CartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Carts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Image = "/images/Programmering.png",
+                            Name = "programmering",
+                            Price = 100.00m,
+                            ProductId = 1,
+                            Quantity = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Image = "/images/Barnomsorg.jpg",
+                            Name = "barnomsorg",
+                            Price = 150.00m,
+                            ProductId = 2,
+                            Quantity = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Image = "/images/Elkonstruktör.jpg",
+                            Name = "elkonstruktör",
+                            Price = 200.00m,
+                            ProductId = 3,
+                            Quantity = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Image = "/images/Pedagogik.jpg",
+                            Name = "pedagogik",
+                            Price = 350.00m,
+                            ProductId = 4,
+                            Quantity = 5
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Image = "/images/CAD-konstruktion.jpg",
+                            Name = "cad-Konstruktion",
+                            Price = 375.00m,
+                            ProductId = 5,
+                            Quantity = 4
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Image = "/images/sjukvård.png",
+                            Name = "sjukvård",
+                            Price = 450.00m,
+                            ProductId = 6,
+                            Quantity = 7
+                        });
+                });
+
             modelBuilder.Entity("tuc_backend.Models.IdentityRole", b =>
                 {
                     b.Property<string>("RoleId")
@@ -140,6 +226,17 @@ namespace tuc_backend.Migrations
                             Image = "/images/sjukvård.png",
                             Name = "sjukvård"
                         });
+                });
+
+            modelBuilder.Entity("tuc_backend.Models.CartItem", b =>
+                {
+                    b.HasOne("tuc_backend.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("tuc_backend.Models.IdentityUsers", b =>
