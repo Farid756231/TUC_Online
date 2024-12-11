@@ -23,14 +23,11 @@ const Navbar = () => {
         </ul>
 
         <div className="nav-icons">
-          <Link to="/serach">
-            <img src="/images/Search-icon.jpg" alt="Search" className="nav-icon" />
-          </Link>
           <Link to="/kundvagn">
             <img src="/images/Kundvagn_icon.jpg" alt="Cart" className="nav-icon" />
           </Link>
           <Link to="/login">
-            <img src="/images/User_icon.png" alt="Login" className="nav-icon" />
+            <img src="/images/Login.jpg" alt="Login" className="nav-icon" />
           </Link>
         </div>
       </nav>
